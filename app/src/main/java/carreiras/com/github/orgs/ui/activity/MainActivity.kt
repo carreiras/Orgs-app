@@ -2,6 +2,7 @@ package carreiras.com.github.orgs.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import carreiras.com.github.orgs.R
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         val dao = ProdutosDao()
+
+        Log.i("FormularioProduto", "onCreate: ${dao.buscaTodos()}")
 
         recyclerView.adapter = ListaProdutosAdapter(
             context = this,
