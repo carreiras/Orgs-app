@@ -23,12 +23,18 @@ class FormularioProdutoActivity : AppCompatActivity(R.layout.activity_formulario
 
             val nome = campoNome.text.toString()
             val descricao = campoDescricao.text.toString()
-            val valor = campoValor.text.toString()
+            val valorEmTexto = campoValor.text.toString()
+
+            val valor = if (valorEmTexto.isBlank()) {
+                BigDecimal.ZERO
+            } else {
+                BigDecimal(valorEmTexto)
+            }
 
             val produtoNovo = Produto(
                 nome = nome,
                 descricao = descricao,
-                valor = BigDecimal(valor)
+                valor = valor
             )
 
             Log.i("FormularioProduto", "onCreate: $produtoNovo")
