@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import carreiras.com.github.orgs.R
+import carreiras.com.github.orgs.dao.ProdutosDao
 import carreiras.com.github.orgs.model.Produto
 import java.math.BigDecimal
 
@@ -38,6 +39,9 @@ class FormularioProdutoActivity : AppCompatActivity(R.layout.activity_formulario
             )
 
             Log.i("FormularioProduto", "onCreate: $produtoNovo")
+            val dao = ProdutosDao()
+            dao.adiciona(produtoNovo)
+            Log.i("FormularioProduto", "onCreate: ${dao.buscaTodos()}")
         }
     }
 }
