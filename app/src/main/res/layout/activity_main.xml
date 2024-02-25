@@ -17,4 +17,13 @@
         tools:listitem="@layout/produto_item"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@drawable/baseline_add_24"
+        tools:layout_editor_absoluteX="331dp"
+        tools:layout_editor_absoluteY="623dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
